@@ -49,6 +49,6 @@ redis_key_url="https://packages.redis.io/gpg"
 local_redis_key="${keyring}/redis-archive-keyring.gpg"
 curl -fsSL $redis_key_url | gpg --dearmor | tee ${local_redis_key} >/dev/null
 
-echo "deb [signed-by=${local_redis_key}] https://packages.redis.io/deb $CODENAME main" > tee /etc/apt/sources.list.d/redis.list
+echo "deb [signed-by=${local_redis_key}] https://packages.redis.io/deb $CODENAME main" > /etc/apt/sources.list.d/redis.list
 
 apt-get update
